@@ -39,7 +39,7 @@ module.exports = {
             })
           }
             const userJson = user.toJSON()
-             const token2 =  "Bearer: "+ jwt.sign(user.toJSON(), CONFIG.jwtSecret,{
+             const token2 =   jwt.sign(user.toJSON(), CONFIG.jwtSecret,{
               expiresIn:"1h"
           });
         

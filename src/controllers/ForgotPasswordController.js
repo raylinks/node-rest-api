@@ -3,6 +3,7 @@ const  {User} = require('../models')
 //const uuidv1 = require('uuid/v1');
 const jwt = require('jsonwebtoken');
 const CONFIG = require('../config/config');
+const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
@@ -10,6 +11,10 @@ module.exports = {
     
 async forgetPassword(req,res){
     try{
+      console.log("l");
+      var loggedInUser = jwt.verify(req.headers.authorization.split(' ')[1], CONFIG.jwtSecret);
+      console.log(loggedInUser);  
+
       const token = Math.random().toString(36).substr(0,20);
               console.log(token);
       const {email} = req.body
