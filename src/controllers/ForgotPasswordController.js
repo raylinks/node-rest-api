@@ -1,6 +1,5 @@
 
-const  {User} = require('../models')
-//const uuidv1 = require('uuid/v1');
+const  {User, PasswordReset} = require('../models')
 const jwt = require('jsonwebtoken');
 const CONFIG = require('../config/config');
 const nodemailer = require('nodemailer');
@@ -11,29 +10,27 @@ module.exports = {
     
 async forgetPassword(req,res){
     try{
-      console.log("l");
       var loggedInUser = jwt.verify(req.headers.authorization.split(' ')[1], CONFIG.jwtSecret);
-      console.log(loggedInUser);  
 
-      const token = Math.random().toString(36).substr(0,20);
-              console.log(token);
+      const token = Math.random().toString(36).substr(0,20);x
+          
       const {email} = req.body
       let user = await User.findOne({
           where:{
             email:email
           }
-      })
-
-
-      user.password_token = token;
-      user.save();
-
+      });
       if(!user){
         res.status(400).json({
-          message:" this  email does not exist",
-
+          message:"Your account could not be found.",
         });
+        
       }else{
+        req.body.email = user.email;
+        req.body.token = token;
+       const token_data = PasswordReset.Create(req.body)
+
+
         const transporter = nodemailer.createTransport({
           service: "raybaba.org",
           auth:{
@@ -48,14 +45,17 @@ async forgetPassword(req,res){
           html:'Click this link to reset your password <a href="http://localhost:8081 /resetpassword?token='+token+'">LINK</a>'
       }
       transporter.sendMail(mailOptions,(err,info)=>{
-          console.log(err);
-          console.log(info);
+  
       })
-      res.json({status:'updated',email:req.body.email})
+      res.status(200).json({
+        message:"An email has been sent to the provided email address. Please check and follow the instructions.';.",
+      });
   }
     }catch(err){
         console.log(err);
     }
 
   },
+
+
 }

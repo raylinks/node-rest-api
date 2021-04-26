@@ -9,10 +9,8 @@ const path = require('path');
 module.exports = {
     async resetPassword(req,res){
         try{
-          var user = jwt.verify(req.headers.authorization, CONFIG.jwtSecret);
-          console.log(user);   
-           
-    
+            var user = jwt.verify(req.headers.authorization.split(' ')[1], CONFIG.jwtSecret);
+     
           if(req.body.password === req.body.confirm_password){
             bcrypt.hash(req.body.password, 10, (err, hash)=>{
                 user.password = hash
