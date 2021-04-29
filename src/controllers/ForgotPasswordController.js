@@ -10,9 +10,9 @@ module.exports = {
     
 async forgetPassword(req,res){
     try{
-      var loggedInUser = jwt.verify(req.headers.authorization.split(' ')[1], CONFIG.jwtSecret);
+     
 
-      const token = Math.random().toString(36).substr(0,20);x
+      const token = Math.random().toString(36).substr(0,20);
           
       const {email} = req.body
       let user = await User.findOne({
@@ -28,7 +28,7 @@ async forgetPassword(req,res){
       }else{
         req.body.email = user.email;
         req.body.token = token;
-       const token_data = PasswordReset.Create(req.body)
+       const token_data = PasswordReset.create(req.body)
 
 
         const transporter = nodemailer.createTransport({
