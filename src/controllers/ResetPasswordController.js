@@ -6,20 +6,10 @@ const CONFIG = require('../config/config');
 const fs = require('fs');
 const bcrypt = require('bcrypt');
 const path = require('path');
+const moment = require('moment');
 const CheckAuth = require('../../middleware/check-auth');
 
 
-    const verifyToken = async function(token){
-    var reset = PasswordReset.findOne({
-        where: {token: token} 
-        });
-        console.log(reset);
-        if(!reset){
-            return ("jjd");
-            
-        }
-    }
-  
 module.exports = {
     async resetPassword(req,res,next){
         try{
@@ -29,8 +19,9 @@ module.exports = {
                     token: req.body.token
                 }
             });
+            var time = moment().startOf(1).fromNow(); 
+           if(!reset.created_at.time ? reset : null){
 
-           if(!reset){
             res.status(400).send({
                 error:'Invalid token or expired token'  
          })
@@ -55,9 +46,11 @@ module.exports = {
                     where: {password: hash} 
                     });
 
-                    PasswordReset.destroy({
+                  const deleteToken =   PasswordReset.update({
                         where: {email: reset.email} 
-                    })
+                    },{token: null})
+                    deleteToken.token = null;
+        
             })
          
 
@@ -71,5 +64,14 @@ module.exports = {
         }
       },
 
-    
+      verifyToken(token){
+        const reset = await PasswordReset.findOne({
+            where: {
+                token: token
+            }
+        });
+       
+        reset && moment(reset.createdAt).startOf(1).fromNow() ? reset : null
+      }
+
 }
