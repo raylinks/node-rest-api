@@ -8,6 +8,8 @@ const bcrypt = require('bcrypt');
 const path = require('path');
 const moment = require('moment');
 const CheckAuth = require('../../middleware/check-auth');
+const  { success, created, serverError } = require('../Response/index');
+
 
 
 module.exports = {
@@ -35,8 +37,7 @@ module.exports = {
         
         });
       
-        
-     
+    
           if(req.body.password === req.body.confirm_password){
               //update
              
@@ -55,7 +56,8 @@ module.exports = {
          
 
           }else{
-            res.json({status:'failed', message:"Password does not match.",})
+            return created(res, 'Password does not match.', user)
+   
             }
                   
             res.json({status:'success', message:"Password successfully reset.",})
@@ -65,7 +67,7 @@ module.exports = {
       },
 
       verifyToken(token){
-        const reset = await PasswordReset.findOne({
+        const reset =  PasswordReset.findOne({
             where: {
                 token: token
             }

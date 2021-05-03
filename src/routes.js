@@ -7,6 +7,10 @@ const  PostController = require('./controllers/PostController');
 
 
 module.exports = (app) => {
+
+  app.get('/api', (req, res) => res.status(200).send({
+    message: 'Welcome to the Node Express PosgresSQL and Sequelize tutorial !',
+  }));
 // Authentication routes
 app.post('/register/create', RegisterController.validate('register'),
 RegisterController.register)

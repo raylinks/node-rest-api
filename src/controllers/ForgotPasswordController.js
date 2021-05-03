@@ -5,6 +5,7 @@ const CONFIG = require('../config/config');
 const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
+const  { success, created, serverError }  =  require('../Response/index');
 
 module.exports = {
     
@@ -47,16 +48,11 @@ async forgetPassword(req,res){
       transporter.sendMail(mailOptions,(err,info)=>{
   
       })
-      res.status(200).json({
-        message:"An email has been sent to the provided email address. Please check and follow the instructions.';.",
-      });
+      return created(res, 'An email has been sent to the provided email address. Please check and follow the instructions', user)
   }
-    }catch(err){
-      console.log(err);
-      res.status(500).json({
-
-        message:"Please try again later.",
-      });
+    }catch(error){
+      return serverError(res, 'Server Error', error.message)
+    
     }
 
   },
