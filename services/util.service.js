@@ -31,10 +31,10 @@ module.exports.ReS = function(res, data, code){ // Success Web Response
     return res.json(send_data)
 };
 
-module.exports.TE = TE = function(err_message, log){ // TE stands for Throw Error
-    if(log === true){
-        console.error(err_message);
-    }
+// module.exports.TE = TE = function(err_message, log){ // TE stands for Throw Error
+//     if(log === true){
+//         console.error(err_message);
+//     }
 
-    throw new Error(err_message);
-};
+//     throw new Error(err_message);
+// };
