@@ -2,7 +2,7 @@
 require('dotenv').config();
 let CONFIG = {} //Make this global to use all over the application
 CONFIG.app          = process.env.APP   || 'dev';
-CONFIG.port         = process.env.PORT  || '4000';
+CONFIG.port         = process.env.PORT  || '2000';
 CONFIG.frontend     = process.env.FRONTEND  ||  'localhost://8080';
 
 CONFIG.db_dialect   = process.env.DB_DIALECT    || '';

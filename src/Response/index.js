@@ -1,12 +1,12 @@
-const badRequest = require('./codes/bad-request')
-const created = require('./codes/created')
-const forbidden = require('./codes/forbidden')
-const notFound = require('./codes/not-found')
-const serverError = require('./codes/server-error')
-const serviceUnavailable = require('./codes/service-unavailable')
-const success = require('./codes/success')
-const unauthorized = require('./codes/unauthorized')
-const validationError = require('./codes/validation-error')
+import badRequest  from './codes/bad-request'
+import created from './codes/created'
+import forbidden from './codes/forbidden'
+import notFound from './codes/not-found'
+import serverError from './codes/server-error'
+import serviceUnavailable from './codes/service-unavailable'
+import success  from './codes/success'
+import unauthorized from './codes/unauthorized'
+import validationError from './codes/validation-error'
 
 module.exports.badRequest = badRequest
 module.exports.created = created

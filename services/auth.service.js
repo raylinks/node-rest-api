@@ -1,6 +1,6 @@
-const { User } 	    = require('../models');
-const validator     = require('validator');
-const { to, TE }    = require('../services/util.service');
+import { User }   from '../models'
+import validator   from 'validator'
+import { to, TE }  from '../services/util.service'
 
 const getUniqueKeyFromBody = function(body){
     // this is so they can send in 3 options unique_key, email, or phone and it will work

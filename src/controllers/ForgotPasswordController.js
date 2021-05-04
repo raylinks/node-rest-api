@@ -1,11 +1,11 @@
 
-const  {User, PasswordReset} = require('../models')
-const jwt = require('jsonwebtoken');
-const CONFIG = require('../config/config');
-const nodemailer = require('nodemailer');
-const fs = require('fs');
-const path = require('path');
-const  { success, created, serverError }  =  require('../Response/index');
+import  {User, PasswordReset} from '../models'
+import jwt  from 'jsonwebtoken'
+import CONFIG from '../config/config'
+import nodemailer from 'nodemailer'
+import fs  from 'fs'
+import path from 'path'
+import  { success, created, serverError }  from '../Response/index'
 
 module.exports = {
     

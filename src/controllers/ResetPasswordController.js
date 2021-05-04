@@ -1,6 +1,6 @@
 
 import  {User,PasswordReset} from '../models'
-//import uuidv1 = require('uuid/v1');
+//import uuidv1 from 'uuid/v1'
 import jwt from 'jsonwebtoken';
 import CONFIG from '../config/config';
 import fs from 'fs';

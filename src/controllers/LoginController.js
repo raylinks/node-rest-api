@@ -1,9 +1,8 @@
-const  {User} = require('../models')
-//const uuidv1 = require('uuid/v1');
-const jwt = require('jsonwebtoken');
-const CONFIG = require('../config/config');
-const fs = require('fs');
-const path = require('path');
+import  {User} from '../models'
+import jwt from 'jsonwebtoken';
+import CONFIG from '../config/config'
+import fs from'fs'
+import path from  'path'
 
 module.exports = {
      async login(req,res){
