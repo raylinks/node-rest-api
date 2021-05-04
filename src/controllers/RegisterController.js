@@ -1,11 +1,11 @@
-const  {User} = require('../models')
-const  {Token} = require('../models')
-const fs = require('fs');
-const path = require('path');
-const {body} = require('express-validator');
-const {validationResult} = require('express-validator');
-const {TE, to,ReS}          = require('../../services/util.service');
-const nodemailer = require('nodemailer');
+import  {User}  from '../models'
+import  {Token}  from '../models'
+import fs  from 'fs';
+import path  from 'path';
+import {body}  from 'express-validator';
+import {validationResult}  from 'express-validator';
+import {TE, to,ReS}   from '../../services/util.service';
+import nodemailer from 'nodemailer';
 
 const sendConfirmMail = async function(req,res,user,tok){
   try{

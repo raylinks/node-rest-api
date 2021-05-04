@@ -1,13 +1,14 @@
-const express = require('express');
-const cors = require('cors');
+import express from 'express';
+import cors from 'cors';
 //const router = express.Router();
-const http = require('http');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const { sequelize } = require('./models/index');
-const  expressValidator = require('express-validator');
-const config =require('./config/config');
-const jwt = require('jsonwebtoken');
+import http from 'http';
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
+import { sequelize } from './models/index';
+import  expressValidator from 'express-validator';
+import config from './config/config';
+import jwt from  'jsonwebtoken';
+
 const app = express();
 const server = http.createServer(app);
 

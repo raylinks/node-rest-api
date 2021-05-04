@@ -1,8 +1,9 @@
 'use strict';
-const {TE, to}          = require('../../services/util.service');
-const bcrypt 			= require('bcrypt');
-const bcrypt_p 			= require('bcrypt-promise');
-const {  Model} = require('sequelize');
+import  {TE, to} from '../../services/util.service';
+import bcrypt 	from 'bcrypt';
+import bcrypt_p from 'bcrypt-promise';
+import {  Model} from 'sequelize';
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**

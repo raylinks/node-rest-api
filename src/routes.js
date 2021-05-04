@@ -1,9 +1,9 @@
 
-const  RegisterController = require('./controllers/RegisterController');
-const  LoginController = require('./controllers/LoginController');
-const  ForgotPasswordController = require('./controllers/ForgotPasswordController');
-const  ResetPasswordController = require('./controllers/ResetPasswordController');
-const  PostController = require('./controllers/PostController');
+import  RegisterController  from './controllers/RegisterController';
+import  LoginController  from './controllers/LoginController';
+import  ForgotPasswordController  from './controllers/ForgotPasswordController';
+import  ResetPasswordController  from './controllers/ResetPasswordController';
+import  PostController  from './controllers/PostController';
 
 
 module.exports = (app) => {

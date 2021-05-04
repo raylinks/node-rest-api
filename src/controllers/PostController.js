@@ -1,10 +1,10 @@
-const  {Post} = require('../models')
-const fs = require('fs');
-const path = require('path');
-const {body} = require('express-validator');
-const {validationResult} = require('express-validator');
-const ars = require('arslugify')
-const  multer = require('multer');
+import  {Post} from '../models'
+import fs from 'fs';
+import path from 'path';
+import {body} from 'express-validator';
+import {validationResult} from 'express-validator';
+import ars from 'arslugify';
+import  multer from 'multer';
 
 
 module.exports = {

@@ -1,14 +1,14 @@
 
-const  {User,PasswordReset} = require('../models')
-//const uuidv1 = require('uuid/v1');
-const jwt = require('jsonwebtoken');
-const CONFIG = require('../config/config');
-const fs = require('fs');
-const bcrypt = require('bcrypt');
-const path = require('path');
-const moment = require('moment');
-const CheckAuth = require('../../middleware/check-auth');
-const  { success, created, serverError } = require('../Response/index');
+import  {User,PasswordReset} from '../models'
+//import uuidv1 = require('uuid/v1');
+import jwt from 'jsonwebtoken';
+import CONFIG from '../config/config';
+import fs from 'fs';
+import bcrypt from 'bcrypt';
+import path from 'path';
+import moment from 'moment';
+import CheckAuth from '../../middleware/check-auth';
+import  { success, created, serverError } from '../Response/index';
 
 
 

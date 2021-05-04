@@ -1,5 +1,5 @@
-const {to} = require('await-to-js');
-const pe = require('parse-error');
+import {to} from 'await-to-js';
+import pe from 'parse-error';
 
 module.exports.to = async (promise) => {
     let err, res;
