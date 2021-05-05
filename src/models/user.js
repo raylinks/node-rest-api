@@ -29,6 +29,12 @@ module.exports = (sequelize, DataTypes) => {
   password  : {
     type:DataTypes.STRING,
     required: [true, 'password is required'],
+    minLength:8,
+},
+role:{
+  type: DataTypes.STRING,
+  enum:['user','guide','lead-guide','admin'],
+  default: 'user'
 },
     email: {
       type: DataTypes.STRING,
@@ -37,7 +43,8 @@ module.exports = (sequelize, DataTypes) => {
           validate: { 
               isEmail: {msg: "Email is  invalid."} }
           }
-  }, {
+  }, 
+  {
     sequelize,
     modelName: 'User',
   });

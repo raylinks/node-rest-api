@@ -25,6 +25,8 @@ app.post('/auth/reset-password',
 ResetPasswordController.resetPassword)
 
 app.post('/auth/posts', 
+// AuthController.protect,
+// AuthController.restrictTo('admin','lead-guide'),
 PostController.index)
 
 app.post('/auth/posts/create', 
