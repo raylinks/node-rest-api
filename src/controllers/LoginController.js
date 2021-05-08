@@ -1,8 +1,6 @@
 import  {User} from '../models'
 import jwt from 'jsonwebtoken';
 import CONFIG from '../config/config'
-import fs from'fs'
-import path from  'path'
 
 module.exports = {
      async login(req,res){

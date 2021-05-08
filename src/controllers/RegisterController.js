@@ -1,7 +1,5 @@
 import  {User}  from '../models'
 import  {Token}  from '../models'
-import fs  from 'fs';
-import path  from 'path';
 import {body}  from 'express-validator';
 import {validationResult}  from 'express-validator';
 import {TE, to,ReS}   from '../../services/util.service';

@@ -31,11 +31,11 @@ module.exports = (sequelize, DataTypes) => {
     required: [true, 'password is required'],
     minLength:8,
 },
-role:{
-  type: DataTypes.STRING,
-  enum:['user','guide','lead-guide','admin'],
-  default: 'user'
-},
+// role:{
+//   type: DataTypes.STRING,
+//   enum:['user','guide','lead-guide','admin'],
+//   default: 'user'
+// },
     email: {
       type: DataTypes.STRING,
        allowNull: true,

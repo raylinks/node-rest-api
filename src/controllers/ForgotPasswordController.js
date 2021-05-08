@@ -3,8 +3,6 @@ import  {User, PasswordReset} from '../models'
 import jwt  from 'jsonwebtoken'
 import CONFIG from '../config/config'
 import nodemailer from 'nodemailer'
-import fs  from 'fs'
-import path from 'path'
 import  { success, created, serverError }  from '../Response/index'
 
 module.exports = {

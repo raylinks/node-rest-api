@@ -3,9 +3,7 @@ import  {User,PasswordReset} from '../models'
 //import uuidv1 from 'uuid/v1'
 import jwt from 'jsonwebtoken';
 import CONFIG from '../config/config';
-import fs from 'fs';
 import bcrypt from 'bcrypt';
-import path from 'path';
 import moment from 'moment';
 import CheckAuth from '../../middleware/check-auth';
 import  { success, created, serverError } from '../Response/index';
