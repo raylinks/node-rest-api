@@ -1,4 +1,4 @@
-const respond = require('../respond')
+import respond from '../respond'
 
 const send = (response, message, data) => {
   let code=500

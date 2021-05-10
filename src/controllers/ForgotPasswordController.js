@@ -1,6 +1,5 @@
 
 import  {User, PasswordReset} from '../models'
-import jwt  from 'jsonwebtoken'
 import CONFIG from '../config/config'
 import nodemailer from 'nodemailer'
 import  { success, created, serverError }  from '../Response/index'
