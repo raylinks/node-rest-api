@@ -1,4 +1,5 @@
 import  jwt from 'jsonwebtoken';
+import  { notFound, serverError }  from '../Response/index'
 
 
 module.exports = (req, res, next) => {
@@ -8,9 +9,7 @@ module.exports = (req, res, next) => {
         req.userData = decoded;
         next(); 
     } catch (err) {
-        return res.status(401).json({
-            message: 'Not Allowed/ You are not autorized'
-        });
+        return notFound(res, 'Token expired.', user)
     }
      
 };
