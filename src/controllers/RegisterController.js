@@ -3,6 +3,7 @@ import  {Token}  from '../models'
 import {body}  from 'express-validator';
 import {validationResult}  from 'express-validator';
 import {TE, to,ReS}   from '../../services/util.service';
+import  { created } from '../Response/index';
 import nodemailer from 'nodemailer';
 
 const sendConfirmMail = async function(req,res,user,tok){
@@ -27,7 +28,7 @@ transporter.sendMail(mailOptions, function (err) {
             msg: err.message 
         });
     }else{
-        res.status(200).json('A verification email has been sent to ' + user.email + '.');
+        return created(res, 'A verification email has been sent to ' + user.email + '.');
     }
     }); // transporter.sendMail ends
 

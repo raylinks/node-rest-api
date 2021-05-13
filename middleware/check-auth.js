@@ -1,5 +1,5 @@
 import  jwt from 'jsonwebtoken';
-import  { notFound, serverError }  from '../Response/index'
+import  { notFound }  from '../Response/index'
 
 
 module.exports = (req, res, next) => {
