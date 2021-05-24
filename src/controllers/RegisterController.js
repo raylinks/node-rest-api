@@ -73,7 +73,6 @@ module.exports = {
                       msg: err.message 
                   });
               }else{
-               //Res('success  ');
                  return res.status(201).json({
                 data:user,
           
@@ -87,9 +86,6 @@ module.exports = {
              
           }catch(errors){
             console.log(errors);
-                 //res.status(400).send({
-                   //error:' this email address is already in use'  
-           //  })
           }
         },
 
