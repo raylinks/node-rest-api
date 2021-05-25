@@ -2,7 +2,6 @@ import  {User}  from '../models'
 import  {Token}  from '../models'
 import {body}  from 'express-validator';
 import {validationResult}  from 'express-validator';
-import {TE, to,ReS}   from '../../services/util.service';
 import  { created } from '../Response/index';
 import nodemailer from 'nodemailer';
 
