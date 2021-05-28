@@ -29,7 +29,8 @@ transporter.sendMail(mailOptions, function (err) {
     }else{
         return created(res, 'A verification email has been sent to ' + user.email + '.');
     }
-    }); // transporter.sendMail ends
+    }); 
+    // transporter.sendMail ends
 
   }catch(err){
     console.log(err);
